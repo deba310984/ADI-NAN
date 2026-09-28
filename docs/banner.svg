@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="ADI-NAN - a Fedora bootc OS for DevOps and Cloud engineers">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#15294f"/>
+      <stop offset="1" stop-color="#3b2a63"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#51a2ff"/>
+      <stop offset="1" stop-color="#b18cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
+
+  <!-- decorative concentric rings -->
+  <g opacity="0.12" stroke="#9ec5ff" stroke-width="2" fill="none">
+    <circle cx="1015" cy="150" r="122"/>
+    <circle cx="1015" cy="150" r="84"/>
+    <circle cx="1015" cy="150" r="46"/>
+  </g>
+
+  <!-- container-cube motif -->
+  <g transform="translate(978,104)" fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.9">
+    <rect x="0" y="0" width="52" height="52" rx="6"/>
+    <rect x="62" y="0" width="52" height="52" rx="6"/>
+    <rect x="31" y="60" width="52" height="52" rx="6"/>
+  </g>
+
+  <!-- accent bar -->
+  <rect x="74" y="62" width="8" height="172" rx="4" fill="url(#accent)"/>
+
+  <!-- title -->
+  <text x="104" y="152" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="88" font-weight="800" fill="#ffffff" letter-spacing="2">ADI-NAN</text>
+
+  <!-- subtitle -->
+  <text x="107" y="194" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="23" font-weight="500" fill="#c7d4ee">A Fedora <tspan fill="#8fb8ff" font-weight="700">bootc</tspan> operating system for DevOps &amp; Cloud engineers</text>
+
+  <!-- feature chips -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#e6eefc">
+    <g><rect x="104" y="222" width="104" height="30" rx="15" fill="#ffffff" opacity="0.09"/><text x="120" y="242">immutable</text></g>
+    <g><rect x="220" y="222" width="150" height="30" rx="15" fill="#ffffff" opacity="0.09"/><text x="236" y="242">atomic updates</text></g>
+    <g><rect x="382" y="222" width="132" height="30" rx="15" fill="#ffffff" opacity="0.09"/><text x="398" y="242">cloud-native</text></g>
+    <g><rect x="526" y="222" width="126" height="30" rx="15" fill="#ffffff" opacity="0.09"/><text x="542" y="242">OS-as-code</text></g>
+  </g>
+</svg>
