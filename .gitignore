@@ -1,0 +1,13 @@
+# build outputs
+output/
+*.qcow2
+*.raw
+*.iso
+*.vmdk
+*.img
+
+# misc
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

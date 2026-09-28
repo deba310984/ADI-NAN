@@ -1,0 +1,13 @@
+# Everything in this repo is consumed by Linux at build/run time.
+# Force LF endings so shell scripts and the Containerfile don't get CRLF
+# on a Windows checkout (CRLF breaks `#!/usr/bin/env bash`).
+* text=auto eol=lf
+
+# Never touch binary artifacts
+*.qcow2 binary
+*.raw   binary
+*.iso   binary
+*.vmdk  binary
+*.img   binary
+*.png   binary
+*.jpg   binary

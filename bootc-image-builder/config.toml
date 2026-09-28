@@ -1,0 +1,21 @@
+# bootc-image-builder config — how a bootable disk image is generated from
+# the ADI-NAN container image (users, filesystem sizing, kernel args).
+# Used by scripts/build-disk.sh.
+
+[[customizations.user]]
+name = "adi"
+# Replace with YOUR ssh public key (cat ~/.ssh/id_ed25519.pub):
+key = "ssh-ed25519 AAAA...replace-me... you@example.com"
+groups = ["wheel"]
+# Optional password instead of / in addition to a key.
+# Generate a hash with:  openssl passwd -6
+# password = "$6$...hash..."
+# The default login shell is zsh (set image-wide in the Containerfile);
+# switch a user later with:  chsh -s /usr/bin/zsh
+
+[[customizations.filesystem]]
+mountpoint = "/"
+minsize = "10 GiB"
+
+# [customizations.kernel]
+# append = "console=ttyS0"

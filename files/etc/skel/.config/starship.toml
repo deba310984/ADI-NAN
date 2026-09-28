@@ -1,0 +1,35 @@
+# ADI-NAN starship prompt — surfaces the context a DevOps/cloud engineer
+# needs at a glance: git, kube context/namespace, and cloud profiles.
+add_newline = true
+
+format = """
+$username$hostname$directory$git_branch$git_status\
+$kubernetes$aws$gcloud$azure\
+$cmd_duration
+$character"""
+
+[directory]
+truncation_length = 4
+style = "bold green"
+
+[git_branch]
+symbol = " "
+style = "purple bold"
+
+[kubernetes]
+disabled = false
+format = '[⎈ $context( \($namespace\))]($style) '
+style = "cyan bold"
+
+[aws]
+format = '[aws:$profile( \($region\))]($style) '
+style = "yellow bold"
+
+[gcloud]
+format = '[gcp:$project]($style) '
+style = "blue bold"
+
+[azure]
+disabled = false
+format = '[az:$subscription]($style) '
+style = "blue bold"
