@@ -97,6 +97,9 @@ install_bin "gh_${GH_VERSION}_linux_${ARCH}/bin/gh" gh
 echo "==> mise (polyglot runtime/version manager)"
 curl -fsSL https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh
 
+echo "==> starship prompt"
+curl -fsSL https://starship.rs/install.sh | sh -s -- --yes --bin-dir /usr/local/bin
+
 # --- Cloud provider CLIs via vendor repos --------------------------------
 # NOTE: these vendor endpoints are the most likely to drift/break over time.
 echo "==> AWS CLI v2"
