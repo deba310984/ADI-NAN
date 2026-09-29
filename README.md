@@ -14,6 +14,7 @@
   <img src="https://img.shields.io/badge/base-Fedora%20bootc%2041-51A2DA?logo=fedora&logoColor=white" alt="Base: Fedora bootc 41">
   <img src="https://img.shields.io/badge/built%20with-bootc-1793D1" alt="Built with bootc">
   <img src="https://img.shields.io/badge/PRs-welcome-b18cff" alt="PRs welcome">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-3fb950" alt="License: MIT"></a>
 </p>
 
 <p align="center">
@@ -179,6 +180,14 @@ Rebuild after any change with `bash scripts/build.sh`.
 - [ ] A GNOME desktop variant for engineer workstations
 - [ ] A committed `mise.toml` toolset (Go, Node, Python)
 - [ ] Hardening pass (SSH, firewalld defaults, auditd)
+
+---
+
+## 🤝 Contributing & License
+
+Contributions are welcome — big or small. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for how to build, test, and open a pull request. Every push and PR is built automatically by CI.
+
+Released under the **[MIT License](LICENSE)** — free to use, modify, and share.
 
 ---
 
