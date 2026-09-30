@@ -1,0 +1,15 @@
+# Demo config for LOCAL TEST VMs ONLY — used by the "Build disk image" CI job.
+# It sets a throwaway console login so you can sign in and see the interface.
+# Do NOT use these credentials for anything real or internet-facing.
+#
+#   login:  adi
+#   pass:   adi-nan
+
+[[customizations.user]]
+name = "adi"
+password = "adi-nan"
+groups = ["wheel"]
+
+[[customizations.filesystem]]
+mountpoint = "/"
+minsize = "10 GiB"

@@ -1,0 +1,50 @@
+name: Build ADI-NAN disk image
+
+# Manual trigger: Actions tab -> "Build ADI-NAN disk image" -> Run workflow.
+# Produces a bootable VM image you can download and boot locally (no local
+# build tooling required). Uses bootc-image-builder/demo.toml for a login.
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: "Disk image type"
+        default: qcow2
+        type: choice
+        options:
+          - qcow2         # QEMU / KVM
+          - vmdk          # VMware / VirtualBox
+          - anaconda-iso  # bootable installer ISO
+          - raw
+
+jobs:
+  disk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build the ADI-NAN container image
+        run: sudo podman build -t adi-nan:latest .
+
+      - name: Build the ${{ inputs.type }} disk image
+        run: |
+          sudo mkdir -p output
+          sudo podman run --rm --privileged \
+            --security-opt label=type:unconfined_t \
+            -v "$(pwd)/output:/output" \
+            -v /var/lib/containers/storage:/var/lib/containers/storage \
+            -v "$(pwd)/bootc-image-builder/demo.toml:/config.toml:ro" \
+            quay.io/centos-bootc/bootc-image-builder:latest \
+            --type "${{ inputs.type }}" \
+            --local adi-nan:latest
+
+      - name: Show output
+        run: sudo find output -type f -printf '%p  (%k KB)\n'
+
+      - name: Upload disk image
+        uses: actions/upload-artifact@v4
+        with:
+          name: adi-nan-${{ inputs.type }}
+          path: output/**/*
+          retention-days: 7
+          if-no-files-found: error
